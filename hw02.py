@@ -12,6 +12,7 @@ def identity(x):
 def increment(x):
     return x + 1
 
+
 def product(n, term):
     """Return the product of the first n terms in a sequence.
 
@@ -27,12 +28,18 @@ def product(n, term):
     >>> product(5, square)   # 1^2 * 2^2 * 3^2 * 4^2 * 5^2
     14400
     """
-    total = 1
-    k = 1
-    while k <= n:
-        total = total * term(k)
-        k = k + 1
-    return total
+    "*** YOUR CODE HERE ***"
+    if not isinstance(n, int) or n < 0:
+        raise AssertionError('n should be positive integer')
+
+    if n == 0:
+        return 0
+
+    ret = 1
+    for i in range(1, n + 1):
+        ret = ret * term(i)
+
+    return ret
 
 # The identity function, defined using a lambda expression!
 identity = lambda k: k
@@ -49,7 +56,8 @@ def factorial(n):
     True
     """
     "*** YOUR CODE HERE ***"
-    return product(n,identity)
+    # return _______
+    return product(n, identity)
 
 def make_adder(n):
     """Return a function that takes an argument K and returns N + K.
